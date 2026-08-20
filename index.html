@@ -2,63 +2,114 @@
     <head>
         <meta charset="utf-8">
         <title>Code Cash</title>
-        <script>
+        <script>            
 
-            
-            // const name = window.prompt('Digite seu nome:')
-            
 
-            // if(name) {
-            //    window.alert(`ola ${name}! Seja bem vindo ao code cash`);
-            // } else if (name === '') {
-            //     window.alert('ola! Seja bem vindo ao code cash');
-            // } else {
-            //     window.alert('operação cancelada.');
-            // }
-            
-            // const temperatura = window.prompt('Digite a temperatura')
 
-            // if (temperatura < 5) {
-            // console.log('Frio intenso');
-            // } else if (temperatura <= 15) {
-            // console.log('Clima frio');
-            // } else if ( temperatura < 25){
-            // console.log('Clima agradavel')
-            // } else if (temperatura <= 30){
-            // console.log('Clima quente')
-            // } else {
-            // console.log('Calor intenso')
-            // }
+
+    
+            const name = prompt('Digite seu nome:')
+            
+            function greet(name){
+            if (!isNaN(Number(name))){
+                return alert('Digite um valor valido.');
+            }
+            if(name) {
+                return(alert(`ola ${name}! Seja bem vindo ao code cash`)) ;
+            } else if (name === '') {
+                return( alert('ola! Seja bem vindo ao code cash'));
+            } 
+                alert('operação cancelada')
+            }
+            greet (name)
+
+
+
+            //const temperatura = window.prompt('Digite a temperatura')
+
+            //f (temperatura < 5) {
+            //console.log('Frio intenso');
+            //} else if (temperatura <= 15) {
+            //console.log('Clima frio');
+            //} else if ( temperatura < 25){
+            //console.log('Clima agradavel')
+            //} else if (temperatura <= 30){
+            //console.log('Clima quente')
+            //} else {
+            //console.log('Calor intenso')
+            //}
         
-    //         for (let i = 1; i <= 100; i = i + 1) {
-    //     if (i % 2 === 0) {
-    //       console.log(`Numero par: ${i}`);
-    //     } else {
-    //       console.log(`Numero ímpar: ${i}`);
-    //     }
-    //   }
+               //     for (let i = 1; i <= 100; i = i + 1) {
+              //  if (i % 2 === 0) {
+                //   console.log(`Numero par: ${i}`);
+                //} else {
+              //   console.log(`Numero ímpar: ${i}`);
+               // }
+             // }
+
+            //for (let n = 1; n <= 100; n++) {
+                //if (n % 2 === 0 && n % 5 === 0) {
+                //    console.log(n + " - Marmenino");
+                //} else if (n % 2 === 0) {
+                //    console.log(n + " - Mar");
+               // } else if (n % 5 === 0) {
+              //      console.log(n + " - Menino");
+           //}
+       // }
 
 
-           
 
-            for (let n = 1; n <= 100; n++) {
-                if (n % 2 === 0 && n % 5 === 0) {
-                    console.log(n + " - Marmenino");
-                } else if (n % 2 === 0) {
-                    console.log(n + " - Mar");
-                } else if (n % 5 === 0) {
-                    console.log(n + " - Menino");
-    }
-}
+
+
+
+            //function greet(name) {
+                //alert(`Hello, ${name}!`)
+            //}
+
+
+            //greet('Eduardo');
+            //greet('pele')
+            //greet('maradona')
+
+
+            //function sum(n1, n2) {
+            //    alert (n1 + n2)
+            //}
+
+            //const numero = window.prompt(`Digite o numero`)  
+
+            //function parse(n) {
+                //if (n <= 0) {
+                //alert('Digite um valor diferente de 0')
+                //}
+                //else if(n % 2 === 0) {
+                //    return "Par";
+                //}
+                //else {
+                //    return "Impar"
+                //}
+            //}
+            //console.log(parse(numero))
+
+            //function create(name){
+                //alert('Oi eu sou o Goku.');
+                //return `Hello, ${name}`;
+            //}
+                
+            //const result = create('eduardo');
+
+            //alert(result);
+
+
+
 
 
 
             
 
+
             
-
-
-
+    
         </script>
     </head>
 </html>
