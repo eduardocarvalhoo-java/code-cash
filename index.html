@@ -3,113 +3,104 @@
         <meta charset="utf-8">
         <title>Code Cash</title>
         <script>            
+     
+       let repeat = true;
+          
+      function greet() {
+        const name = prompt('Digite seu nome:');
 
-
-
-
-    
-            const name = prompt('Digite seu nome:')
-            
-            function greet(name){
-            if (!isNaN(Number(name))){
-                return alert('Digite um valor valido.');
-            }
-            if(name) {
-                return(alert(`ola ${name}! Seja bem vindo ao code cash`)) ;
-            } else if (name === '') {
-                return( alert('ola! Seja bem vindo ao code cash'));
-            } 
-                alert('operação cancelada')
-            }
-            greet (name)
-
-
-
-            //const temperatura = window.prompt('Digite a temperatura')
-
-            //f (temperatura < 5) {
-            //console.log('Frio intenso');
-            //} else if (temperatura <= 15) {
-            //console.log('Clima frio');
-            //} else if ( temperatura < 25){
-            //console.log('Clima agradavel')
-            //} else if (temperatura <= 30){
-            //console.log('Clima quente')
-            //} else {
-            //console.log('Calor intenso')
-            //}
+        if (name === '') {
+          return alert(
+            'Olá! Seja bem vindo ao Code Cash.'
+          ); 
+        } else if (name === null) {
+          repeat = false;
+          return alert ('Operação cancelada.');
+        } else if (!isNaN(name)) {
+          alert('Digite um valor válido.');
+          return greet();
+        }
         
-               //     for (let i = 1; i <= 100; i = i + 1) {
-              //  if (i % 2 === 0) {
-                //   console.log(`Numero par: ${i}`);
-                //} else {
-              //   console.log(`Numero ímpar: ${i}`);
-               // }
-             // }
+        alert(`Olá, ${name}! Seja bem vindo ao Code Cash.`);
+      }
 
-            //for (let n = 1; n <= 100; n++) {
-                //if (n % 2 === 0 && n % 5 === 0) {
-                //    console.log(n + " - Marmenino");
-                //} else if (n % 2 === 0) {
-                //    console.log(n + " - Mar");
-               // } else if (n % 5 === 0) {
-              //      console.log(n + " - Menino");
-           //}
-       // }
+      greet();
 
+      let balance = 0;
 
+      const operations = {
+        check: () => {
+          window.alert(`Saldo atual: R$ ${balance}`);
+        },
+        deposit: () => {
+          const deposit = prompt('Valor do depósito');
 
+          if (deposit === null) {
+            window.alert('Operação cancelada.');
+            return;
+          }
 
+          if (Number(deposit) < 1 || isNaN(deposit)) {
+            window.alert('Valor inválido.');
+            return operations.deposit();
+          }
 
+          balance = balance + Number(deposit);
+          window.alert(`Saldo atual: R$ ${balance}`);
+        },
+        cashOut: () => {
+          const cashout = prompt('Valor do saque');
 
-            //function greet(name) {
-                //alert(`Hello, ${name}!`)
-            //}
+          if (cashout === null) {
+            window.alert('Operação cancelada.');
+            return;
+          }
 
+          if (Number(cashout) < 1 || isNaN(cashout)) {
+            window.alert('Valor inválido.');
+            return operations.cashout();
+          }
 
-            //greet('Eduardo');
-            //greet('pele')
-            //greet('maradona')
+          balance = balance - Number(cashout);
+          window.alert(`Saldo atual: R$ ${balance}`);
+        },
+        exit: () => {
+          window.alert('Foi um prazer atendê-lo. Até logo!');
+          repeat = false;
+        },
+        invalid: () => {
+          window.alert('Operação inválida.');
+        }
+      }
 
-
-            //function sum(n1, n2) {
-            //    alert (n1 + n2)
-            //}
-
-            //const numero = window.prompt(`Digite o numero`)  
-
-            //function parse(n) {
-                //if (n <= 0) {
-                //alert('Digite um valor diferente de 0')
-                //}
-                //else if(n % 2 === 0) {
-                //    return "Par";
-                //}
-                //else {
-                //    return "Impar"
-                //}
-            //}
-            //console.log(parse(numero))
-
-            //function create(name){
-                //alert('Oi eu sou o Goku.');
-                //return `Hello, ${name}`;
-            //}
-                
-            //const result = create('eduardo');
-
-            //alert(result);
-
-
-
-
-
-
+      while (repeat) {
+        const operation = Number(prompt(`
+          Escolha uma operação:
+  
+          1. Consultar
+          2. Depositar
+          3. Sacar
+          4. Sair
+        `));
+  
+        switch (operation) {
+          case 1:
+            operations.check();
+            break;
+          case 2:
+            operations.deposit();
+            break;
+          case 3:
+            operations.cashOut();
+            break;
+          case 4:
+            operations.exit();
+            break;
+          default:
+            operations.invalid();
+        }
+      }
             
-
-
-            
-    
         </script>
     </head>
 </html>
